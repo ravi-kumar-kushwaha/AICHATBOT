@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat AI
 
-## Getting Started
+A full-stack Chat AI web application built with Next.js (frontend), Node.js & Express (backend), Prisma ORM, and PostgreSQL for database management. The project supports user authentication (login/signup), JWT-based authorization, and real-time chatting with a future-ready AI assistant.
 
-First, run the development server:
+## 🔧 Tech Stack
+
+### Frontend:
+- **Next.js** (React-based)
+- **Tailwind CSS** for styling
+- **Axios** for API requests
+
+### Backend:
+- **Node.js** with **Express.js**
+- **JWT** for authentication and authorization
+- **Prisma ORM**
+- **PostgreSQL** as the database
+- **dotenv** for environment configuration
+
+## 📁 Project Structure
+
+chat_ai/
+│
+├── frontend/ # Next.js app
+│ ├── pages/
+│ │ ├── index.js
+│ │ ├── login.js
+│ │ └── signup.js
+│ ├── components/
+│ └── utils/
+│
+├── server/ # Node.js/Express backend
+│ ├── src/
+│ │ ├── controllers/
+│ │ ├── middleware/
+│ │ ├── routes/
+│ │ └── index.js
+│ ├── prisma/
+│ │ ├── schema.prisma
+│ │ └── client.js
+│ └── .env
+│
+├── package.json
+├── README.md
+└── .env
+
+markdown
+Copy
+Edit
+
+---
+
+## ✅ Features
+
+### 🔐 Authentication
+- User Registration (`/signup`)
+- User Login (`/login`)
+- Password encryption using `bcryptjs`
+- JWT-based session management
+
+### 👥 Authorization
+- Role-based access (admin/user)
+- Middleware for protected routes
+
+### 🗃️ Database
+- PostgreSQL managed via **Prisma ORM**
+- User schema with:
+  - `id`
+  - `name`
+  - `email`
+  - `password`
+  - `role`
+  - `createdAt`
+
+### 📡 API Endpoints
+
+| Method | Route            | Description           | Access     |
+|--------|------------------|-----------------------|------------|
+| POST   | `/api/signup`    | Register a new user   | Public     |
+| POST   | `/api/login`     | Login user            | Public     |
+| GET    | `/api/me`        | Get logged-in user    | Private    |
+| GET    | `/api/users`     | Get all users         | Admin only |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/your-username/chat_ai.git
+cd chat_ai
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+cd frontend && npm install
+cd ../server && npm install
+3. Set Up Environment Variables
+Create a .env file in the server/ directory:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+env
+Copy
+Edit
+DATABASE_URL="postgresql://username:password@localhost:5432/chat_ai"
+JWT_SECRET="your_jwt_secret"
+PORT=5000
+4. Setup Prisma & Database
+bash
+Copy
+Edit
+cd server
+npx prisma init
+npx prisma migrate dev --name init
+npx prisma generate
