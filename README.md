@@ -59,7 +59,7 @@ chat_ai/
 │   │   │   ├── chat.routes.js
 │   │   │   └── message.routes.js
 │   │   └── index.js
-│   │   └──index.js
+│   │   └── app.js
 │   ├── prisma/
 │   │   ├── schema.prisma
 │   │   └── migrations/
