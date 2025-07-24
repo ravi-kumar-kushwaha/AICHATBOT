@@ -1,4 +1,4 @@
-##AI CHATBOT
+#AI CHATBOT
 
 A full-stack AI CHATBOT web application built with Next.Js (frontend), Node.js & Express (backend), Prisma ORM, PostgreSQL database, and Ollama for local AI model inference. The project supports user authentication (login/signup), JWT-based authorization, real-time streaming chat responses, and conversation management.
 
@@ -280,3 +280,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Check the Ollama documentation: https://ollama.ai/docs
 - Prisma documentation: https://www.prisma.io/docs
 - Create an issue in this repository for project-specific problems
+
+## Contact
+**Name** – [Ravi Kumar Kushwaha](mailto:ravi.kumar.kushwaha@example.com)
+Email - [ravikumarkush1212@gmail.com](mailto:your.email@example.com)  
+
+---
+
+<p align="center">
+  Made with ❤️ by Ravi Kumar Kushwaha
+</p>
