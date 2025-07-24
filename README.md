@@ -1,4 +1,4 @@
-###AI CHATBOT
+##AI CHATBOT
 
 A full-stack AI CHATBOT web application built with Next.Js (frontend), Node.js & Express (backend), Prisma ORM, PostgreSQL database, and Ollama for local AI model inference. The project supports user authentication (login/signup), JWT-based authorization, real-time streaming chat responses, and conversation management.
 
